@@ -1924,6 +1924,10 @@ body,
     border-right: 0;
   }
 
+  .labcity-showcase {
+    display: none;
+  }
+
   .site-footer {
     grid-template-columns: 1fr;
     align-items: start;
