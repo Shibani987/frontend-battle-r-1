@@ -97,9 +97,10 @@
 
   function setActiveFeature(index, options = {}) {
     activeFeatureIndex = index;
+    const isCompactLayout = mobileQuery.matches;
 
     featureCards.forEach((card, cardIndex) => {
-      const isActive = cardIndex === index;
+      const isActive = isCompactLayout || cardIndex === index;
       const trigger = card.querySelector(".feature-trigger");
 
       card.classList.toggle("is-active", isActive);
@@ -108,7 +109,7 @@
       }
     });
 
-    if (options.focus) {
+    if (options.focus && !isCompactLayout) {
       const trigger = featureCards[index]?.querySelector(".feature-trigger");
       trigger?.focus({ preventScroll: true });
     }

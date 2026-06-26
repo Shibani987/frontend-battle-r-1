@@ -1230,9 +1230,9 @@ h3 {
 
 .segmented-control {
   display: flex;
-  gap: .35rem;
+  gap: .2rem;
   margin: 0;
-  padding: .35rem;
+  padding: .3rem;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: white;
@@ -1728,20 +1728,101 @@ body,
   }
 
   .feature-panel {
-    max-height: 0;
+    max-height: none;
     margin: 0;
-    padding: 0 1rem;
-    overflow: hidden;
-    transition: max-height 340ms var(--ease-in-out), padding-bottom 340ms var(--ease-in-out);
+    padding: 0 1rem 1rem;
+    overflow: visible;
+    transition: none;
   }
 
   .feature-card.is-active .feature-panel {
-    max-height: 420px;
+    max-height: none;
     padding-bottom: 1rem;
   }
 
   .feature-card:hover {
     transform: none;
+  }
+
+  .workflow-canvas {
+    min-height: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+  }
+
+  .workflow-toolbar {
+    position: static;
+    left: auto;
+    top: auto;
+    flex-wrap: wrap;
+  }
+
+  .workflow-toolbar span {
+    min-width: 0;
+    flex: 1 1 120px;
+  }
+
+  .workflow-rail {
+    position: static;
+    left: auto;
+    top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .55rem;
+  }
+
+  .workflow-rail span {
+    display: none;
+  }
+
+  .flow-node,
+  .flow-group {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+
+  .flow-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+    width: 100%;
+    padding: .8rem;
+    border: 1px dashed rgba(255, 255, 255, .24);
+    border-radius: 10px;
+  }
+
+  .flow-group .flow-node {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .flow-node {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .flow-line {
+    display: none;
+  }
+
+  .flow-node::after {
+    display: none;
+  }
+
+  .node-email,
+  .node-edit,
+  .node-agent,
+  .node-code,
+  .node-route,
+  .node-telegram,
+  .node-if,
+  .node-send {
+    left: auto;
+    top: auto;
   }
 }
 
